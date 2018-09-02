@@ -1,4 +1,17 @@
 ////YouTube Video
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //class for a youtube Video
 var YouTubeVideo = /** @class */ (function () {
     //constructor of class YouTubeVideo
@@ -105,6 +118,26 @@ var YouTubeVideo = /** @class */ (function () {
     }
     return YouTubeVideo;
 }());
+//Sub class of YouTubeVideo Class
+var Movie = /** @class */ (function (_super) {
+    __extends(Movie, _super);
+    function Movie(price, title, src, noOfViews, noOfLikes, noOfDislikes, publishDate, description, category, channelName, videoQualityAvailable, isCaptionAvailable, noOfTimesReported) {
+        var _this = _super.call(this, title, src, noOfViews, noOfLikes, noOfDislikes, publishDate, description, category, channelName, videoQualityAvailable, isCaptionAvailable, noOfTimesReported) || this;
+        _this.getPrice = function () {
+            return _this.price;
+        };
+        _this.setPrice = function () {
+            var price = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                price[_i] = arguments[_i];
+            }
+            return "Yet to implement";
+        };
+        _this.price = price;
+        return _this;
+    }
+    return Movie;
+}(YouTubeVideo));
 //instantiating a new Video
 var kamikaze = new YouTubeVideo("Kamikaze [Official Audio]", "https://www.youtube.com/watch?v=FhF9RwkHAJw", 2054657, 124000, 1700, "30 Aug 2018", "From the album Kamikaze, out now: http://shady.sr/Kamikaze\n\nhttp://eminem.com\nhttp://facebook.com/eminem\nhttp://twitter.com/eminem\nhttp://instagram.com/eminem\nhttp://eminem.tumblr.com\n\nhttp://shadyrecords.com\nhttp://facebook.com/shadyrecords\nhttp://twitter.com/shadyrecords\nhttp://instagram.com/shadyrecords\nhttp://trustshady.tumblr.com\n\nMusic in this video\nSong\nKamikaze\nArtist\nEminem\nLicensed to YouTube by\nUMG (on behalf of UMGRI Interscope)\nBuy it now on Google Play", "Music", "EminemMusic", [144, 240, 366, 480, 720, 1080], false, 2);
 console.log("*YOU TUBE VIDEO*");
