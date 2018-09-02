@@ -141,6 +141,22 @@ class YouTubeVideo {
 
 }
 
+//Sub class of YouTubeVideo Class
+class Movie extends YouTubeVideo{
+    protected price : number[]  //different prices according to Video quality
+    constructor(price:number[], title : string,src : string, noOfViews : number, noOfLikes : number, noOfDislikes : number, publishDate : string, description : string, category : string, channelName : string, videoQualityAvailable : number[], isCaptionAvailable : boolean, noOfTimesReported : number){
+        super(title,src, noOfViews, noOfLikes, noOfDislikes, publishDate, description, category, channelName, videoQualityAvailable, isCaptionAvailable, noOfTimesReported)
+        this.price = price
+    }
+
+    getPrice = ()=>{
+        return this.price
+    }
+    setPrice = (...price:number[])=>{
+        return "Yet to implement"
+    }
+}
+
 //instantiating a new Video
 
 let kamikaze = new YouTubeVideo("Kamikaze [Official Audio]","https://www.youtube.com/watch?v=FhF9RwkHAJw",2054657,124000,1700,"30 Aug 2018",`From the album Kamikaze, out now: http://shady.sr/Kamikaze
